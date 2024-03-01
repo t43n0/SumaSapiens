@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+
+    <TextView
+        android:id="@+id/textViewTituloSeleccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="546dp"
+        android:layout_marginBottom="16dp"
+        android:text="Selección de Alumno"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAlbertoBS"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Alberto Barba Soriano"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnAlvaroBV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Alvaro Blázquez Vallejo"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnRaulCM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="39dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="1dp"
+        android:paddingBottom="0dp"
+        android:text="Raúl Carrizo Martín"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnJoanaCG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="65dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Joana Casco Galea"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnJavierDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="90dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Javier Domínguez Fernández"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnGabrielFG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="111dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Gabriel Fernandez Aguilera"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnAmancioJavierFL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="135dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Amancio Javier Fernández Lobo"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnLuisGH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="156dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Luis Gallego Herrero"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnDanielGR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="181dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Daniel Gallo Romo"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnAlbertoGA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="200dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Alberto García Altez"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnCarlosGH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="220dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Carlos García Hernández"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnJuanMGA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="-5dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Juan Manuel Guerra Arcas"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnJalilMLB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="39dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Jalil Martin Londres Blanes"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnAngelZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="227dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Ángel Zhang"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnLianaV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="204dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Liana Vilkelenoka"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnLorenzoSB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="159dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Lorenzo Sáez Béjar"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnNicolasSR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="181dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Nicolás Suárez Ruiz"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnVictorPR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="136dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Víctor Pérez Ramírez"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnJavierMG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="110dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Javier Martínez Gómez"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnGonzaloGR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="85dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Gonzalo González Rodríguez"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnMarcosGD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="17dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Marcos Giménez Díaz"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnIgnacioMF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="62dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Ignacio Martín Fernández"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/editTextAlumnoSeleccionado"
+        android:layout_width="712dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="-7dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Aceptar" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="382dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Cancelar" />
+
+
+</RelativeLayout>

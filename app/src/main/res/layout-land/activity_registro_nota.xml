@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroNotaActivity">
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="20dp"
+        android:text="Registro de Nota"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/edtAlumno"
+        android:layout_width="472dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Nombre del Alumno"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btnSeleccionarAlumno"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtAlumno"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-56dp"
+        android:layout_marginEnd="86dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Seleccionar Alumno" />
+
+    <EditText
+        android:id="@+id/edtExamen"
+        android:layout_width="271dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/textViewTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Nota del examen"
+        android:inputType="none" />
+
+    <EditText
+        android:id="@+id/edtActividades"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="314dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Nota de actividades"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btnSeleccionarAsignatura"
+        android:layout_width="140dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/edtAsignatura"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-57dp"
+        android:layout_marginEnd="81dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Seleccionar Asignatura" />
+
+    <EditText
+        android:id="@+id/edtAsignatura"
+        android:layout_width="471dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Selecciona la asignatura"
+        android:inputType="none" />
+
+    <EditText
+        android:id="@+id/edtResultado"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="206dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="198dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Resultado"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btnConsultar"
+        android:layout_width="166dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="497dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="69dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Consultar" />
+
+    <Button
+        android:id="@+id/btnCalcularNota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Calcular nota" />
+
+    <Button
+        android:id="@+id/btnGuardarResultado"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="408dp"
+        android:layout_marginBottom="9dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnLimpiarDatos"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="7dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Limpiar" />
+
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Fondo de pantalla -->
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="SumaSapiens"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#00BCD4" />
+
+    <Button
+        android:id="@+id/btnRegistrarNota"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="580dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Registro"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btnConsultarNota"
+
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/btnRegistrarNota"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="62dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Inicio de Sesion"
+        android:textSize="28sp" />
+
+
+</RelativeLayout>
