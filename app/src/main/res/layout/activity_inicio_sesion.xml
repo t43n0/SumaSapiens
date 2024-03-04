@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/fto_1"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/inicio_de_sesion"
+        android:textColor="#00BCD4"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="32dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/buttonLimpiar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:text="@string/limpiar"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/buttonGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/inicio_de_sesion"
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="48dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FFFFFF"
+        android:background="#cc000000"
+        android:hint="@string/email"
+        android:textAlignment="center"
+        android:textColor="#00BCD4"
+        android:textColorHint="#00BCD4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:autofillHints=""
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="48dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FFFFFF"
+        android:background="#cc000000"
+        android:hint="@string/contrase_a"
+        android:textAlignment="center"
+        android:inputType="textPassword"
+        android:textColor="#00BCD4"
+        android:textColorHint="#00BCD4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:autofillHints="" />
+
+
+
+</RelativeLayout>
+

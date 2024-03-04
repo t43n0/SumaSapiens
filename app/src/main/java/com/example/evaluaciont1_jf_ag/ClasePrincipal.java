@@ -8,6 +8,6 @@ public class ClasePrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clase_principal);
+        setContentView(R.layout.activity_rv);
     }
 }

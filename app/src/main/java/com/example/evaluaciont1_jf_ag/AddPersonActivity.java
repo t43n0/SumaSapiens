@@ -18,7 +18,7 @@ public class AddPersonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seleccion_alumno);
+        setContentView(R.layout.item_anadir);
 
         personLayout = findViewById(R.id.layout_person);
         addButton = findViewById(R.id.button_add);

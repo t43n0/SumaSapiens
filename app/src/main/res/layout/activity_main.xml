@@ -11,7 +11,9 @@
         android:id="@+id/imageViewBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:src="@drawable/fto_gif"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/fondo" />
 
     <!-- Título -->
     <TextView
@@ -19,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:text="SumaSapiens"
-        android:textSize="32sp"
+        android:text="@string/sumasapiens"
+        android:textSize="48sp"
         android:textStyle="bold"
         android:textColor="#00BCD4" />
 
@@ -30,22 +32,20 @@
         android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="580dp"
+        android:layout_above="@id/btnConsultarNota"
         android:backgroundTint="#00BCD4"
-        android:text="Registro"
+        android:text="@string/registro"
         android:textSize="28sp" />
 
     <Button
         android:id="@+id/btnConsultarNota"
-
         android:layout_width="280dp"
         android:layout_height="70dp"
-        android:layout_below="@id/btnRegistrarNota"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#00BCD4"
-        android:text="Inicio de Sesion"
+        android:text="@string/inicio_de_sesion"
         android:textSize="28sp" />
 
 
