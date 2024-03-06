@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_mayus"
+        android:textAlignment="center"
+        android:textSize="32sp"/>
+s
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNombre"
+        android:textSize="16sp"
+        android:text="@string/correo_1_s"/>
+
+    <TextView
+        android:id="@+id/tvMoneda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/moneda_1_s"
+        android:layout_below="@id/tvEmail"
+        android:textSize="16sp"/>
+
+</RelativeLayout>

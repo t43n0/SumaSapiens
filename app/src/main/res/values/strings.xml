@@ -16,6 +16,11 @@
     <string name="mas">+</string>
     <string name="buscar">Buscar</string>
     <string name="borrar">Borrar</string>
+    <string name="crear_gasto_conjunto">Crear gasto conjunto</string>
+    <string name="importe">Importe</string>
+    <string name="correo_1_s">Correo: %1$s</string>
+    <string name="nombre_mayus">Nombre</string>
+    <string name="moneda_1_s">Moneda: %1$s</string>
 
 
 </resources>
