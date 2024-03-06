@@ -37,14 +37,17 @@ public class CrearGasto extends AppCompatActivity {
         rv = findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        contactoList = leerContactosDesdeArchivo("contactos.txt");
-
-        ca = new ContactoAdapter(contactoList);
-        rv.setAdapter(ca);
-
+        leerContactosDesdeArchivo("contactos.txt", new OnContactosLeidosListener() {
+            @Override
+            public void onContactosLeidos(List<Contacto> contactos) {
+                contactoList = contactos;
+                ca = new ContactoAdapter(contactoList);
+                rv.setAdapter(ca);
+            }
+        });
     }
 
-    private List<Contacto> leerContactosDesdeArchivo(String s) {
+    private void leerContactosDesdeArchivo(String s, OnContactosLeidosListener listener) {
         List<Contacto> contactos = new ArrayList<>();
 
         try {
@@ -54,39 +57,45 @@ public class CrearGasto extends AppCompatActivity {
 
             while ((line = br.readLine()) != null) {
                 // Crea un nuevo EmailModel y añádelo a la lista
-                Contacto contact = buscarContactoPorEmail(line);
-                contactos.add(contact);
+                final String email = line;
+                buscarContactoPorEmail(email, new OnContactoEncontradoListener() {
+                    @Override
+                    public void onContactoEncontrado(Contacto contacto) {
+                        contactos.add(contacto);
+                    }
+                });
             }
 
             br.close();
             fis.close();
+            listener.onContactosLeidos(contactos);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return contactos;
     }
 
-    private Contacto buscarContactoPorEmail(String email) {
+
+    private void buscarContactoPorEmail(String email, OnContactoEncontradoListener listener) {
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("usuarios");
-        final Contacto[] contacto = new Contacto[1];
         dbRef.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         Usuario usuario = dataSnapshot.getValue(Usuario.class);
-                        contacto[0] = new Contacto(usuario.getNombre(), usuario.email, usuario.getTipoMoneda());
+                        Contacto contacto = new Contacto(usuario.getNombre(), usuario.email, usuario.getTipoMoneda());
+                        listener.onContactoEncontrado(contacto);
                     }
                 } else {
                     Toast.makeText(CrearGasto.this, "No existe el usuario", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                // Manejar cancelación si es necesario
             }
         });
-        return contacto[0];
     }
+
 }
