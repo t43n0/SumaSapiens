@@ -17,11 +17,17 @@
             android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"/>
 
-        <EditText
-            android:id="@+id/edit_text_currency"
+        <Spinner
+            android:id="@+id/spinnerTipoMoneda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Moneda"
+            android:background="#0f000000"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:popupBackground="#FFFFFF"
+            android:prompt="@string/seleccionar_moneda"
+            android:spinnerMode="dropdown"
+            android:textSize="20sp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"/>

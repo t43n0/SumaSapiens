@@ -1,67 +1,130 @@
 package com.example.evaluaciont1_jf_ag;
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AddPersonActivity extends AppCompatActivity {
 
-    private LinearLayout personLayout;
-    private Button addButton;
-    private Button createAllButton;
+    EditText etEmail;
+    TextView tvNombre;
+    TextView tvMoneda;
+    Button btnAgregar;
+    Button btnBuscar;
+    Button btnBorrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_anadir);
+        setContentView(R.layout.activity_rv);
+        etEmail = findViewById(R.id.etEmail);
+        tvNombre = findViewById(R.id.tvNombre);
+        tvMoneda = findViewById(R.id.tvMoneda);
+        btnAgregar = findViewById(R.id.btnAgregar);
+        btnBuscar = findViewById(R.id.btnBuscar);
+        btnBorrar = findViewById(R.id.btnLimpiar);
+        btnAgregar.setEnabled(false);
 
-        personLayout = findViewById(R.id.layout_person);
-        addButton = findViewById(R.id.button_add);
-        createAllButton = findViewById(R.id.button_crear_todos); // Referencia al nuevo botón
-
-        addButton.setOnClickListener(new View.OnClickListener() {
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addPersonView();
+                if (etEmail.getText().toString().isEmpty()) {
+                    Toast.makeText(AddPersonActivity.this, "Debes introducir el correo de la persona que desees agregar", Toast.LENGTH_SHORT).show();
+                } else {
+                    buscarPorCorreo(etEmail.getText().toString());
+                    etEmail.setEnabled(false);
+                }
             }
         });
 
-        createAllButton.setOnClickListener(new View.OnClickListener() {
+        btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Aquí puedes agregar el código para crear todas las personas
-                // Luego, puedes iniciar la actividad ClasePrincipal
-                Intent intent = new Intent(AddPersonActivity.this, ClasePrincipal.class);
-                startActivity(intent);
+                String correo = etEmail.getText().toString();
+                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("usuarios");
+                dbRef.orderByChild("email").equalTo(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                Usuario usuario = snapshot.getValue(Usuario.class);
+
+                                Toast.makeText(AddPersonActivity.this, "Contacto añadido", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Log.d(TAG, "No se encontró un usuario con el correo proporcionado");
+                            Toast.makeText(AddPersonActivity.this, "No se encontró un usuario con el correo proporcionado", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        // Manejar error de base de datos si es necesario
+                        Log.e(TAG, "Error al obtener el usuario: " + databaseError.getMessage());
+                    }
+                });
+            }
+        });
+
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etEmail.setEnabled(true);
+                etEmail.setText("");
             }
         });
     }
 
-    private void addPersonView() {
-        // Crear la vista de la persona
-        View personView = getLayoutInflater().inflate(R.layout.item_person, null);
+    private void buscarPorCorreo(String correo) {
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("usuarios");
 
-        // Referenciar elementos de la vista de la persona
-        EditText nameEditText = personView.findViewById(R.id.edit_text_name);
-        EditText currencyEditText = personView.findViewById(R.id.edit_text_currency);
-        Button createButton = personView.findViewById(R.id.button_create);
-
-        // Configurar clic en el botón de crear
-        createButton.setOnClickListener(new View.OnClickListener() {
+        dbRef.orderByChild("email").equalTo(correo).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                String name = nameEditText.getText().toString();
-                // Hacer algo con el nombre
-                Toast.makeText(AddPersonActivity.this, "Persona creada: " + name, Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Usuario usuario = snapshot.getValue(Usuario.class);
+                        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+                        if (usuario.getEmail().equals(mAuth.getCurrentUser().getEmail())) {
+                            Toast.makeText(AddPersonActivity.this, "No puedes agregarte a ti mismo", Toast.LENGTH_SHORT).show();
+                        } else {
+                            tvNombre.setText(usuario.getNombre());
+                            tvMoneda.setText(usuario.getTipoMoneda());
+                            btnAgregar.setEnabled(true);
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "No se encontró un usuario con el correo proporcionado");
+                    Toast.makeText(AddPersonActivity.this, "No se encontró un usuario con el correo proporcionado", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Manejar error de base de datos si es necesario
+                Log.e(TAG, "Error al obtener el usuario: " + databaseError.getMessage());
             }
         });
-
-        // Agregar la vista de la persona al diseño principal
-        personLayout.addView(personView);
     }
 }

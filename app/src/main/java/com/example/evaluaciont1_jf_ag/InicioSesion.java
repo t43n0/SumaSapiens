@@ -65,7 +65,7 @@ public class InicioSesion extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            Intent intent = new Intent(InicioSesion.this, AddPersonActivity.class);
+                            Intent intent = new Intent(InicioSesion.this, ClasePrincipal.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.

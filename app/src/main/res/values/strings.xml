@@ -12,6 +12,10 @@
     <string name="sumasapiens">SumaSapiens</string>
     <string name="email">email</string>
     <string name="nombre">nombre</string>
+    <string name="a_adir_contacto">Añadir contacto</string>
+    <string name="mas">+</string>
+    <string name="buscar">Buscar</string>
+    <string name="borrar">Borrar</string>
 
 
 </resources>
