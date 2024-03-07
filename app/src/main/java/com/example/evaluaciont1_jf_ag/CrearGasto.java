@@ -1,12 +1,14 @@
 package com.example.evaluaciont1_jf_ag;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,7 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -37,9 +38,10 @@ public class CrearGasto extends AppCompatActivity {
         rv = findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        leerContactosDesdeArchivo("contactos.txt", new OnContactosLeidosListener() {
+        leerContactosDesdeArchivo(new OnContactosLeidosListener() {
             @Override
             public void onContactosLeidos(List<Contacto> contactos) {
+                Log.d(TAG, "onContactosLeidos: " + contactos.size() + " contactos leídos");
                 contactoList = contactos;
                 ca = new ContactoAdapter(contactoList);
                 rv.setAdapter(ca);
@@ -47,20 +49,20 @@ public class CrearGasto extends AppCompatActivity {
         });
     }
 
-    private void leerContactosDesdeArchivo(String s, OnContactosLeidosListener listener) {
+    private void leerContactosDesdeArchivo(OnContactosLeidosListener listener) {
         List<Contacto> contactos = new ArrayList<>();
 
         try {
-            FileInputStream fis = openFileInput(s);
+            FileInputStream fis = getApplicationContext().openFileInput("contactos.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(fis));
             String line;
 
             while ((line = br.readLine()) != null) {
                 // Crea un nuevo EmailModel y añádelo a la lista
-                final String email = line;
-                buscarContactoPorEmail(email, new OnContactoEncontradoListener() {
+                buscarContactoPorEmail(line, new OnContactoEncontradoListener() {
                     @Override
                     public void onContactoEncontrado(Contacto contacto) {
+                        Log.d(TAG, "onContactoEncontrado: " + contacto.getNombre());
                         contactos.add(contacto);
                     }
                 });

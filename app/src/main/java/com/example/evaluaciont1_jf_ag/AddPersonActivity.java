@@ -3,6 +3,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -76,6 +79,10 @@ public class AddPersonActivity extends AppCompatActivity {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 Usuario usuario = snapshot.getValue(Usuario.class);
                                 String contenido = etEmail.getText().toString();
+                                // Verificar y solicitar permisos en tiempo de ejecución
+                                /*if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                                    ActivityCompat.requestPermissions(AddPersonActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                                }*/
 
                                 try {
                                     FileInputStream fis = openFileInput("contactos.txt");
@@ -93,21 +100,23 @@ public class AddPersonActivity extends AppCompatActivity {
                                     fis.close();
 
                                     // Obtén el contenido como String
+                                    // Obtén el contenido como String
                                     String contenidoLeido = sb.toString();
 
-                                    // Comprueba si el valor coincide
-                                    if (contenidoLeido.equals(contenido)) {
+// Comprueba si el valor coincide
+                                    if (contenidoLeido.contains(contenido)) {
                                         Toast.makeText(AddPersonActivity.this, "Ya tienes a este contacto agregado", Toast.LENGTH_SHORT).show();
                                     } else {
                                         // Abre o crea el archivo en modo privado
-                                        FileOutputStream fos = openFileOutput("contactos.txt", Context.MODE_PRIVATE);
+                                        FileOutputStream fos = openFileOutput("contactos.txt", Context.MODE_APPEND); // Cambiado a MODE_APPEND
 
                                         // Escribe en el archivo
-                                        fos.write(contenido.getBytes());
+                                        fos.write((contenido + "\n").getBytes()); // Agregado "\n" para separar entradas
 
                                         // Cierra el flujo de salida
                                         fos.close();
                                     }
+
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                     // Manejo de errores aquí

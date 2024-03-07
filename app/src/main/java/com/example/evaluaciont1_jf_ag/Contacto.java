@@ -1,5 +1,7 @@
 package com.example.evaluaciont1_jf_ag;
 
+import java.io.Serializable;
+
 public class Contacto {
     private String nombre;
     private String correo;
