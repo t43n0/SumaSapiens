@@ -21,6 +21,10 @@
     <string name="correo_1_s">Correo: %1$s</string>
     <string name="nombre_mayus">Nombre</string>
     <string name="moneda_1_s">Moneda: %1$s</string>
+    <string name="seleccione_los_contactos">Seleccione los contactos</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="resultado">Resultado</string>
+    <string name="el_importe_total_a_pagar_por_persona_es_de">El importe total a pagar por persona es de ...</string>
 
 
 </resources>

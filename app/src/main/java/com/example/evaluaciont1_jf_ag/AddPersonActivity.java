@@ -72,6 +72,7 @@ public class AddPersonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new bgthreat().start();
                 Toast.makeText(AddPersonActivity.this, "Contacto añadido", Toast.LENGTH_SHORT).show();
+                btnAgregar.setEnabled(false);
             }
         });
 

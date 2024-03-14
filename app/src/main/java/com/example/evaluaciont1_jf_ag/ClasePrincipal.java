@@ -41,6 +41,7 @@ public class ClasePrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ClasePrincipal.this, Configuracion.class);
+                startActivity(i);
             }
         });
     }

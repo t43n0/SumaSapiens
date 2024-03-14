@@ -15,6 +15,9 @@
         android:theme="@style/Theme.EvaluacionT1_JF_AG"
         tools:targetApi="31">
         <activity
+            android:name=".ResultGasto"
+            android:exported="false" />
+        <activity
             android:name=".Configuracion"
             android:exported="false" />
         <activity

@@ -4,46 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearGasto">
+    tools:context=".ResultGasto">
 
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/seleccione_los_contactos"
+        android:text="@string/resultado"
         android:textAlignment="center"
         android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/etImporte"
+    <TextView
+        android:id="@+id/tvDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/el_importe_total_a_pagar_por_persona_es_de"
         android:layout_below="@id/tvTitulo"
-        android:layout_margin="32dp"
-        android:hint="@string/importe"
         android:textAlignment="center"
-        android:autofillHints=""
-        android:inputType="numberDecimal" />
+        android:textSize="24sp"
+        android:layout_marginTop="32dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/etImporte"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/btnSiguiente"
+    <TextView
+        android:id="@+id/tvTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:text="@string/siguiente"/>
-
+        android:layout_below="@id/tvDesc"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginTop="32dp"/>
 
 
 </RelativeLayout>

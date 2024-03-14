@@ -18,10 +18,6 @@ public class Contacto {
     @ColumnInfo(name = "moneda")
     private String moneda;
 
-    public Contacto() {
-
-    }
-
     public Contacto(String nombre, String correo, String moneda) {
         this.nombre = nombre;
         this.correo = correo;

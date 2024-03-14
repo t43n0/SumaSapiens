@@ -3,6 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
     <TextView
         android:id="@+id/tvNombre"
         android:layout_width="match_parent"
@@ -10,21 +15,21 @@
         android:text="@string/nombre_mayus"
         android:textAlignment="center"
         android:textSize="32sp"/>
-s
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvNombre"
-        android:textSize="16sp"
-        android:text="@string/correo_1_s"/>
 
     <TextView
         android:id="@+id/tvMoneda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/moneda_1_s"
-        android:layout_below="@id/tvEmail"
-        android:textSize="16sp"/>
+        android:layout_below="@id/tvNombre"
+        android:textAlignment="center"
+        android:textSize="32sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/tvMoneda"/>
 
 </RelativeLayout>
